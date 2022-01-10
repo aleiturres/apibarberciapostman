@@ -9,12 +9,12 @@
 			"name": "USERS",
 			"item": [
 				{
-					"name": "GET USERS",
+					"name": "LIST USERS",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8000/api/v1/users?page=1&table_name=users_profiles&field_name=profiles.name&orderBy=desc",
+							"raw": "localhost:8000/api/v1/users?page=1",
 							"host": [
 								"localhost"
 							],
@@ -31,20 +31,23 @@
 								},
 								{
 									"key": "tenant_id",
-									"value": "38",
+									"value": "iturres",
 									"disabled": true
 								},
 								{
 									"key": "table_name",
-									"value": "users_profiles"
+									"value": "users_profiles",
+									"disabled": true
 								},
 								{
 									"key": "field_name",
-									"value": "profiles.name"
+									"value": "profiles.name",
+									"disabled": true
 								},
 								{
 									"key": "orderBy",
-									"value": "desc"
+									"value": "desc",
+									"disabled": true
 								}
 							]
 						}
@@ -64,7 +67,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"user_name\": \"aleiturres2\",\r\n    \"email\": \"2aleiturres@hotmail.com\",\r\n    \"email_confirmation\": \"2aleiturres@hotmail.com\",\r\n    \"password\": \"123456\",\r\n    \"password_confirmation\": \"123456\",\r\n    \"user_type\": \"employee\",\r\n    \"status\": 0,\r\n    \"name\": \"khsaoshahoashishdisahdoishdoihaodihohashdashdiohdosahdisshdaohdoiashdoisdhaoshiadisodhoiahsdiodshio\",\r\n    \"surname\": \"222\",\r\n    \"birth_date\": \"1976-03-22\",\r\n    \"gender\": \"o\",\r\n    \"another_gender\": \"ss\",\r\n    \"company\": \"khsaoshahoashishdisahdoishdoihaodihohashdashdiohdosahdisshdaohdoiashdoisdhaoshiadisodhoiahsdiodshio\",\r\n    \"rg\": \"10999700-1\",\r\n    \"cpf\": \"256.827.668-14\",\r\n    \"cnpj\": \"\",\r\n    \"insc_est\": \"10999700-1\"\r\n\r\n    \r\n}",
+							"raw": "{\r\n    \"user_name\": \"aleiturres2\",\r\n    \"email\": \"2aleiturres@hotmail.com\",\r\n    \"email_confirmation\": \"2aleiturres@hotmail.com\",\r\n    \"password\": \"123456\",\r\n    \"password_confirmation\": \"123456\",\r\n    \"user_type\": \"employee\",\r\n    \"status\": 0,\r\n    \"name\": \"khsaoshahoashishdisahdoishdoihaodihohashdashdiohdosahdisshdaohdoiashdoisdhaoshiadisodhoiahsdiodshio\",\r\n    \"surname\": \"222\",\r\n    \"birth_date\": \"1976-03-22\",\r\n    \"gender\": \"o\",\r\n    \"another_gender\": \"ss\",\r\n    \"company\": \"khsaoshahoashishdisahdoishdoihaodihohashdashdiohdosahdisshdaohdoiashdoisdhaoshiadisodhoiahsdiodshio\",\r\n    \"rg\": \"10999700-1\",\r\n    \"cpf\": \"256.827.668-14\",\r\n    \"cnpj\": \"\",\r\n    \"insc_est\": \"10999700-1\",\r\n    \"tenant_id\": \"iturres\"\r\n\r\n    \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -81,6 +84,39 @@
 								"api",
 								"v1",
 								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET USER",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/api/v1/users/3?tenant_id=5",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"3"
+							],
+							"query": [
+								{
+									"key": "tenant_id",
+									"value": "5"
+								}
 							]
 						}
 					},
