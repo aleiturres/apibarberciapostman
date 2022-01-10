@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "a2d4be49-d57b-40f1-8064-1e17f69685fb",
+		"_postman_id": "01e58c70-5877-4666-b3ad-f0db1d72fb01",
 		"name": "APIBARBERCIA",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -14,7 +14,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8000/api/v1/users?page=1&table_name=users_profiles&field_name=profiles.names&orderBy=asc",
+							"raw": "localhost:8000/api/v1/users?page=1&table_name=users_profiles&field_name=profiles.name&orderBy=desc",
 							"host": [
 								"localhost"
 							],
@@ -40,11 +40,11 @@
 								},
 								{
 									"key": "field_name",
-									"value": "profiles.names"
+									"value": "profiles.name"
 								},
 								{
 									"key": "orderBy",
-									"value": "asc"
+									"value": "desc"
 								}
 							]
 						}
@@ -55,10 +55,16 @@
 					"name": "ADD  USERS",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"aleiturres\",\r\n    \"email\": \"sdfsd2\",\r\n    \"password\": \"123456\",\r\n    \"tenant_id\": \"testando\",\r\n    \"status\": 1\r\n}",
+							"raw": "{\r\n    \"user_name\": \"aleiturres2\",\r\n    \"email\": \"2aleiturres@hotmail.com\",\r\n    \"email_confirmation\": \"2aleiturres@hotmail.com\",\r\n    \"password\": \"123456\",\r\n    \"password_confirmation\": \"123456\",\r\n    \"user_type\": \"employee\",\r\n    \"status\": 0,\r\n    \"name\": \"khsaoshahoashishdisahdoishdoihaodihohashdashdiohdosahdisshdaohdoiashdoisdhaoshiadisodhoiahsdiodshio\",\r\n    \"surname\": \"222\",\r\n    \"birth_date\": \"1976-03-22\",\r\n    \"gender\": \"o\",\r\n    \"another_gender\": \"ss\",\r\n    \"company\": \"khsaoshahoashishdisahdoishdoihaodihohashdashdiohdosahdisshdaohdoiashdoisdhaoshiadisodhoiahsdiodshio\",\r\n    \"rg\": \"10999700-1\",\r\n    \"cpf\": \"256.827.668-14\",\r\n    \"cnpj\": \"\",\r\n    \"insc_est\": \"10999700-1\"\r\n\r\n    \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -75,33 +81,6 @@
 								"api",
 								"v1",
 								"users"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "http://localhost:8000/api/v1/users?page=1",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8000/api/v1/users?page=1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"v1",
-								"users"
-							],
-							"query": [
-								{
-									"key": "page",
-									"value": "1"
-								}
 							]
 						}
 					},
